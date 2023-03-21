@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "MHRotaryKnob"
-  s.version          = "0.1.0"
+  s.version          = "0.1.1"
   s.summary          = "A UIControl that acts like a rotary knob."
   s.description      = <<-DESC
                         In operation it is similar to a `UISlider` but its shape is square rather than long and narrow.
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/dannys42/MHRotaryKnob.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '12.0'
   s.requires_arc = true
 
   s.source_files = 'MHRotaryKnob/**/*'
@@ -30,6 +30,14 @@ Pod::Spec.new do |s|
   }
 
   s.public_header_files = 'MHRotaryKnob/**/*.h'
+  s.user_target_xcconfig = {
+      'HEADER_SEARCH_PATHS' => "$(inherited) ${PODS_ROOT}/MHRotaryKnob/MHRotaryKnob"
+  }
+
+#  s.pod_target_xcconfig = {
+#      'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/Headers/Public'
+#      '"$(PODS_ROOT)/Headers/Build/gRPC/include"'
+#  }
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
