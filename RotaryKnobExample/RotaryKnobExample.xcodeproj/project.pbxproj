@@ -14,6 +14,7 @@
 		143EB4E72BDA066B0057F793 /* RotaryKnobExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EB4E62BDA066B0057F793 /* RotaryKnobExampleTests.swift */; };
 		143EB4F12BDA066B0057F793 /* RotaryKnobExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EB4F02BDA066B0057F793 /* RotaryKnobExampleUITests.swift */; };
 		143EB4F32BDA066B0057F793 /* RotaryKnobExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EB4F22BDA066B0057F793 /* RotaryKnobExampleUITestsLaunchTests.swift */; };
+		143EB50B2BDA0C660057F793 /* MHRotaryKnob in Frameworks */ = {isa = PBXBuildFile; productRef = 143EB50A2BDA0C660057F793 /* MHRotaryKnob */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				143EB50B2BDA0C660057F793 /* MHRotaryKnob in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +147,9 @@
 			dependencies = (
 			);
 			name = RotaryKnobExample;
+			packageProductDependencies = (
+				143EB50A2BDA0C660057F793 /* MHRotaryKnob */,
+			);
 			productName = RotaryKnobExample;
 			productReference = 143EB4D12BDA066A0057F793 /* RotaryKnobExample.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +222,9 @@
 				Base,
 			);
 			mainGroup = 143EB4C82BDA066A0057F793;
+			packageReferences = (
+				143EB5092BDA0C660057F793 /* XCRemoteSwiftPackageReference "MHRotaryKnob" */,
+			);
 			productRefGroup = 143EB4D22BDA066A0057F793 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -420,6 +428,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RotaryKnobExample/Preview Content\"";
+				DEVELOPMENT_TEAM = 32Y6877257;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -456,6 +465,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RotaryKnobExample/Preview Content\"";
+				DEVELOPMENT_TEAM = 32Y6877257;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -609,6 +619,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		143EB5092BDA0C660057F793 /* XCRemoteSwiftPackageReference "MHRotaryKnob" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dannys42/MHRotaryKnob.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		143EB50A2BDA0C660057F793 /* MHRotaryKnob */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 143EB5092BDA0C660057F793 /* XCRemoteSwiftPackageReference "MHRotaryKnob" */;
+			productName = MHRotaryKnob;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 143EB4C92BDA066A0057F793 /* Project object */;
 }
