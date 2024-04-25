@@ -27,8 +27,8 @@ struct MHRotaryKnobRepresentable: UIViewRepresentable {
     self.rotaryKnob.knobImageCenter = CGPointMake(80.0, 76.0);
     [self.rotaryKnob addTarget:self action:@selector(rotaryKnobDidChange) forControlEvents:UIControlEventValueChanged];
 */
-    func makeUIView(context: Context) -> MHRotaryKnob{
-        let rotaryKnob = MHRotaryKnob()
+    func makeUIView(context: Context) -> MHRotaryKnob {
+        let rotaryKnob = MHRotaryKnob(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 
         updateProperties(rotaryKnob: rotaryKnob)
         return rotaryKnob
