@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		143EB4D52BDA066A0057F793 /* RotaryKnobExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EB4D42BDA066A0057F793 /* RotaryKnobExampleApp.swift */; };
+		143EB4D72BDA066A0057F793 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EB4D62BDA066A0057F793 /* ContentView.swift */; };
+		143EB4D92BDA066B0057F793 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 143EB4D82BDA066B0057F793 /* Assets.xcassets */; };
+		143EB4DD2BDA066B0057F793 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 143EB4DC2BDA066B0057F793 /* Preview Assets.xcassets */; };
+		143EB4E72BDA066B0057F793 /* RotaryKnobExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EB4E62BDA066B0057F793 /* RotaryKnobExampleTests.swift */; };
+		143EB4F12BDA066B0057F793 /* RotaryKnobExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EB4F02BDA066B0057F793 /* RotaryKnobExampleUITests.swift */; };
+		143EB4F32BDA066B0057F793 /* RotaryKnobExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EB4F22BDA066B0057F793 /* RotaryKnobExampleUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		143EB4E32BDA066B0057F793 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 143EB4C92BDA066A0057F793 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 143EB4D02BDA066A0057F793;
+			remoteInfo = RotaryKnobExample;
+		};
+		143EB4ED2BDA066B0057F793 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 143EB4C92BDA066A0057F793 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 143EB4D02BDA066A0057F793;
+			remoteInfo = RotaryKnobExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		143EB4D12BDA066A0057F793 /* RotaryKnobExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RotaryKnobExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		143EB4D42BDA066A0057F793 /* RotaryKnobExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotaryKnobExampleApp.swift; sourceTree = "<group>"; };
+		143EB4D62BDA066A0057F793 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		143EB4D82BDA066B0057F793 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		143EB4DA2BDA066B0057F793 /* RotaryKnobExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RotaryKnobExample.entitlements; sourceTree = "<group>"; };
+		143EB4DC2BDA066B0057F793 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		143EB4E22BDA066B0057F793 /* RotaryKnobExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RotaryKnobExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		143EB4E62BDA066B0057F793 /* RotaryKnobExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotaryKnobExampleTests.swift; sourceTree = "<group>"; };
+		143EB4EC2BDA066B0057F793 /* RotaryKnobExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RotaryKnobExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		143EB4F02BDA066B0057F793 /* RotaryKnobExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotaryKnobExampleUITests.swift; sourceTree = "<group>"; };
+		143EB4F22BDA066B0057F793 /* RotaryKnobExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotaryKnobExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		143EB4CE2BDA066A0057F793 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		143EB4DF2BDA066B0057F793 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		143EB4E92BDA066B0057F793 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		143EB4C82BDA066A0057F793 = {
+			isa = PBXGroup;
+			children = (
+				143EB4D32BDA066A0057F793 /* RotaryKnobExample */,
+				143EB4E52BDA066B0057F793 /* RotaryKnobExampleTests */,
+				143EB4EF2BDA066B0057F793 /* RotaryKnobExampleUITests */,
+				143EB4D22BDA066A0057F793 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		143EB4D22BDA066A0057F793 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				143EB4D12BDA066A0057F793 /* RotaryKnobExample.app */,
+				143EB4E22BDA066B0057F793 /* RotaryKnobExampleTests.xctest */,
+				143EB4EC2BDA066B0057F793 /* RotaryKnobExampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		143EB4D32BDA066A0057F793 /* RotaryKnobExample */ = {
+			isa = PBXGroup;
+			children = (
+				143EB4D42BDA066A0057F793 /* RotaryKnobExampleApp.swift */,
+				143EB4D62BDA066A0057F793 /* ContentView.swift */,
+				143EB4D82BDA066B0057F793 /* Assets.xcassets */,
+				143EB4DA2BDA066B0057F793 /* RotaryKnobExample.entitlements */,
+				143EB4DB2BDA066B0057F793 /* Preview Content */,
+			);
+			path = RotaryKnobExample;
+			sourceTree = "<group>";
+		};
+		143EB4DB2BDA066B0057F793 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				143EB4DC2BDA066B0057F793 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		143EB4E52BDA066B0057F793 /* RotaryKnobExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				143EB4E62BDA066B0057F793 /* RotaryKnobExampleTests.swift */,
+			);
+			path = RotaryKnobExampleTests;
+			sourceTree = "<group>";
+		};
+		143EB4EF2BDA066B0057F793 /* RotaryKnobExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				143EB4F02BDA066B0057F793 /* RotaryKnobExampleUITests.swift */,
+				143EB4F22BDA066B0057F793 /* RotaryKnobExampleUITestsLaunchTests.swift */,
+			);
+			path = RotaryKnobExampleUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		143EB4D02BDA066A0057F793 /* RotaryKnobExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 143EB4F62BDA066B0057F793 /* Build configuration list for PBXNativeTarget "RotaryKnobExample" */;
+			buildPhases = (
+				143EB4CD2BDA066A0057F793 /* Sources */,
+				143EB4CE2BDA066A0057F793 /* Frameworks */,
+				143EB4CF2BDA066A0057F793 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RotaryKnobExample;
+			productName = RotaryKnobExample;
+			productReference = 143EB4D12BDA066A0057F793 /* RotaryKnobExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		143EB4E12BDA066B0057F793 /* RotaryKnobExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 143EB4F92BDA066B0057F793 /* Build configuration list for PBXNativeTarget "RotaryKnobExampleTests" */;
+			buildPhases = (
+				143EB4DE2BDA066B0057F793 /* Sources */,
+				143EB4DF2BDA066B0057F793 /* Frameworks */,
+				143EB4E02BDA066B0057F793 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				143EB4E42BDA066B0057F793 /* PBXTargetDependency */,
+			);
+			name = RotaryKnobExampleTests;
+			productName = RotaryKnobExampleTests;
+			productReference = 143EB4E22BDA066B0057F793 /* RotaryKnobExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		143EB4EB2BDA066B0057F793 /* RotaryKnobExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 143EB4FC2BDA066B0057F793 /* Build configuration list for PBXNativeTarget "RotaryKnobExampleUITests" */;
+			buildPhases = (
+				143EB4E82BDA066B0057F793 /* Sources */,
+				143EB4E92BDA066B0057F793 /* Frameworks */,
+				143EB4EA2BDA066B0057F793 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				143EB4EE2BDA066B0057F793 /* PBXTargetDependency */,
+			);
+			name = RotaryKnobExampleUITests;
+			productName = RotaryKnobExampleUITests;
+			productReference = 143EB4EC2BDA066B0057F793 /* RotaryKnobExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		143EB4C92BDA066A0057F793 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					143EB4D02BDA066A0057F793 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					143EB4E12BDA066B0057F793 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 143EB4D02BDA066A0057F793;
+					};
+					143EB4EB2BDA066B0057F793 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 143EB4D02BDA066A0057F793;
+					};
+				};
+			};
+			buildConfigurationList = 143EB4CC2BDA066A0057F793 /* Build configuration list for PBXProject "RotaryKnobExample" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 143EB4C82BDA066A0057F793;
+			productRefGroup = 143EB4D22BDA066A0057F793 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				143EB4D02BDA066A0057F793 /* RotaryKnobExample */,
+				143EB4E12BDA066B0057F793 /* RotaryKnobExampleTests */,
+				143EB4EB2BDA066B0057F793 /* RotaryKnobExampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		143EB4CF2BDA066A0057F793 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				143EB4DD2BDA066B0057F793 /* Preview Assets.xcassets in Resources */,
+				143EB4D92BDA066B0057F793 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		143EB4E02BDA066B0057F793 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		143EB4EA2BDA066B0057F793 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		143EB4CD2BDA066A0057F793 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				143EB4D72BDA066A0057F793 /* ContentView.swift in Sources */,
+				143EB4D52BDA066A0057F793 /* RotaryKnobExampleApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		143EB4DE2BDA066B0057F793 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				143EB4E72BDA066B0057F793 /* RotaryKnobExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		143EB4E82BDA066B0057F793 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				143EB4F32BDA066B0057F793 /* RotaryKnobExampleUITestsLaunchTests.swift in Sources */,
+				143EB4F12BDA066B0057F793 /* RotaryKnobExampleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		143EB4E42BDA066B0057F793 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 143EB4D02BDA066A0057F793 /* RotaryKnobExample */;
+			targetProxy = 143EB4E32BDA066B0057F793 /* PBXContainerItemProxy */;
+		};
+		143EB4EE2BDA066B0057F793 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 143EB4D02BDA066A0057F793 /* RotaryKnobExample */;
+			targetProxy = 143EB4ED2BDA066B0057F793 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		143EB4F42BDA066B0057F793 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		143EB4F52BDA066B0057F793 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		143EB4F72BDA066B0057F793 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RotaryKnobExample/RotaryKnobExample.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RotaryKnobExample/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MHRotaryKnob.RotaryKnobExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		143EB4F82BDA066B0057F793 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RotaryKnobExample/RotaryKnobExample.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RotaryKnobExample/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MHRotaryKnob.RotaryKnobExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		143EB4FA2BDA066B0057F793 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MHRotaryKnob.RotaryKnobExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RotaryKnobExample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RotaryKnobExample";
+			};
+			name = Debug;
+		};
+		143EB4FB2BDA066B0057F793 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MHRotaryKnob.RotaryKnobExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RotaryKnobExample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RotaryKnobExample";
+			};
+			name = Release;
+		};
+		143EB4FD2BDA066B0057F793 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MHRotaryKnob.RotaryKnobExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RotaryKnobExample;
+			};
+			name = Debug;
+		};
+		143EB4FE2BDA066B0057F793 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MHRotaryKnob.RotaryKnobExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RotaryKnobExample;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		143EB4CC2BDA066A0057F793 /* Build configuration list for PBXProject "RotaryKnobExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				143EB4F42BDA066B0057F793 /* Debug */,
+				143EB4F52BDA066B0057F793 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		143EB4F62BDA066B0057F793 /* Build configuration list for PBXNativeTarget "RotaryKnobExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				143EB4F72BDA066B0057F793 /* Debug */,
+				143EB4F82BDA066B0057F793 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		143EB4F92BDA066B0057F793 /* Build configuration list for PBXNativeTarget "RotaryKnobExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				143EB4FA2BDA066B0057F793 /* Debug */,
+				143EB4FB2BDA066B0057F793 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		143EB4FC2BDA066B0057F793 /* Build configuration list for PBXNativeTarget "RotaryKnobExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				143EB4FD2BDA066B0057F793 /* Debug */,
+				143EB4FE2BDA066B0057F793 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 143EB4C92BDA066A0057F793 /* Project object */;
+}
