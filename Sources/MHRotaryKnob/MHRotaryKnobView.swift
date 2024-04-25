@@ -11,22 +11,6 @@ import SwiftUI
 struct MHRotaryKnobRepresentable: UIViewRepresentable {
     @ObservedObject var config: MHRotaryKnobConfiguration
 
-    /*
-    self.rotaryKnob.interactionStyle = MHRotaryKnobInteractionStyleRotating;
-    self.rotaryKnob.scalingFactor = 1.5;
-    self.rotaryKnob.maximumValue = self.slider.maximumValue;
-    self.rotaryKnob.minimumValue = self.slider.minimumValue;
-    self.rotaryKnob.value = self.slider.value;
-    self.rotaryKnob.defaultValue = self.rotaryKnob.value;
-    self.rotaryKnob.resetsToDefault = YES;
-    self.rotaryKnob.backgroundColor = [UIColor clearColor];
-    self.rotaryKnob.backgroundImage = [UIImage imageNamed:@"Knob Background"];
-    [self.rotaryKnob setKnobImage:[UIImage imageNamed:@"Knob"] forState:UIControlStateNormal];
-    [self.rotaryKnob setKnobImage:[UIImage imageNamed:@"Knob Highlighted"] forState:UIControlStateHighlighted];
-    [self.rotaryKnob setKnobImage:[UIImage imageNamed:@"Knob Disabled"] forState:UIControlStateDisabled];
-    self.rotaryKnob.knobImageCenter = CGPointMake(80.0, 76.0);
-    [self.rotaryKnob addTarget:self action:@selector(rotaryKnobDidChange) forControlEvents:UIControlEventValueChanged];
-*/
     func makeUIView(context: Context) -> MHRotaryKnob {
         let rotaryKnob = MHRotaryKnob(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 
@@ -73,25 +57,59 @@ public struct MHRotaryKnobView: View {
 }
 
 public class MHRotaryKnobConfiguration: ObservableObject {
-    @Published public var interactionStyle: MHRotaryKnobInteractionStyle = .rotating
-    @Published public var scalingFactor: CGFloat = 1.0
-    @Published public var backgroundColor: Color = Color(white: 0.0, opacity: 0.0)
+    @Published public var interactionStyle: MHRotaryKnobInteractionStyle
+    @Published public var scalingFactor: CGFloat
+    @Published public var backgroundColor: Color
     @Published public var backgroundImage: Image?
     @Published public var foregroundImage: Image?
     @Published public var knobImageNormal: Image?
     @Published public var knobImageDisabled: Image?
     @Published public var knobImageHighlighted: Image?
-    @Published public var knobImageCenter: CGPoint = .zero
-    @Published public var minimumValue: CGFloat = 0.0
-    @Published public var maximumValue: CGFloat = 1.0
-    @Published public var defaultValue: CGFloat = 0.5
-    @Published public var resetsToDefault: Bool = true
-    @Published public var continuous: Bool = true
-    @Published public var maxAngle: CGFloat = 135
-    @Published public var minRequiredDistanceFromKnobCenter: CGFloat = 4
-    @Published public var circularTouchZone: Bool = false
+    @Published public var knobImageCenter: CGPoint
+    @Published public var minimumValue: CGFloat
+    @Published public var maximumValue: CGFloat
+    @Published public var defaultValue: CGFloat
+    @Published public var resetsToDefault: Bool
+    @Published public var continuous: Bool
+    @Published public var maxAngle: CGFloat
+    @Published public var minRequiredDistanceFromKnobCenter: CGFloat
+    @Published public var circularTouchZone: Bool
 
-    public init() {
+    public init(interactionStyle: MHRotaryKnobInteractionStyle = .rotating,
+                scalingFactor: CGFloat = 1.0,
+                backgroundColor: Color = Color(white: 0.0, opacity: 0.0),
+                backgroundImage: Image? = nil,
+                foregroundImage: Image? = nil,
+                knobImageNormal: Image? = nil,
+                knobImageDisabled: Image? = nil,
+                knobImageHighlighted: Image? = nil,
+                knobImageCenter: CGPoint = .zero,
+                minimumValue: CGFloat = 0.0,
+                maximumValue: CGFloat = 1.0,
+                defaultValue: CGFloat = 0.5,
+                resetsToDefault: Bool = true,
+                continuous: Bool = true,
+                maxAngle: CGFloat = 135,
+                minRequiredDistanceFromKnobCenter: CGFloat = 4,
+                circularTouchZone: Bool = false) {
+
+        self.interactionStyle = interactionStyle
+        self.scalingFactor = scalingFactor
+        self.backgroundColor = backgroundColor
+        self.backgroundImage = backgroundImage
+        self.foregroundImage = foregroundImage
+        self.knobImageNormal = knobImageNormal
+        self.knobImageDisabled = knobImageDisabled
+        self.knobImageHighlighted = knobImageHighlighted
+        self.knobImageCenter = knobImageCenter
+        self.minimumValue = minimumValue
+        self.maximumValue = maximumValue
+        self.defaultValue = defaultValue
+        self.resetsToDefault = resetsToDefault
+        self.continuous = continuous
+        self.maxAngle = maxAngle
+        self.minRequiredDistanceFromKnobCenter = minRequiredDistanceFromKnobCenter
+        self.circularTouchZone = circularTouchZone
     }
 }
 
