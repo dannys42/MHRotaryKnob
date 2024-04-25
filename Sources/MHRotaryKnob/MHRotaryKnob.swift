@@ -306,14 +306,14 @@ public class MHRotaryKnob: UIControl {
      * visually.
      */
     public func setValue(_ newValue: Float, animated: Bool) {
-        let oldValue = value
+        let oldValue = _value
 
         if CGFloat(newValue) < minimumValue {
-            value = minimumValue
+            _value = minimumValue
         } else if CGFloat(newValue) > maximumValue {
-            value = maximumValue
+            _value = maximumValue
         } else {
-            value = CGFloat(newValue)
+            _value = CGFloat(newValue)
         }
 
         valueDidChange(from: oldValue, to: value, animated: animated)
