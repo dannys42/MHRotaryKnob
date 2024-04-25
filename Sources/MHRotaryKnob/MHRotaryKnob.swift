@@ -31,7 +31,7 @@ import UIKit
 /*
  * Possible values for the rotary knob's interactionStyle property.
  */
-enum MHRotaryKnobInteractionStyle : Int {
+public enum MHRotaryKnobInteractionStyle {
     case rotating
     case sliderHorizontal // left -, right +
     case sliderVertical // up +, down -
@@ -63,7 +63,7 @@ enum MHRotaryKnobInteractionStyle : Int {
  * This class needs the QuartzCore framework.
  */
 
-class MHRotaryKnob: UIControl {
+public class MHRotaryKnob: UIControl {
     private var backgroundImageView: UIImageView? // shows the background image
     private var foregroundImageView: UIImageView? // shows the foreground image
     private var knobImageView: UIImageView? // shows the knob image
@@ -75,10 +75,10 @@ class MHRotaryKnob: UIControl {
     private var canReset = false // prevents reset while still dragging
 
     // How the user interacts with the control.
-    var interactionStyle: MHRotaryKnobInteractionStyle!
+    public var interactionStyle: MHRotaryKnobInteractionStyle!
     // The image that is drawn behind the knob. May be nil.
 
-    var backgroundImage: UIImage? {
+    public var backgroundImage: UIImage? {
         get {
             return backgroundImageView?.image
         }
@@ -99,7 +99,7 @@ class MHRotaryKnob: UIControl {
      * for partially transparent overlays to make shadow or highlight effects.
      */
 
-    var foregroundImage: UIImage? {
+    public var foregroundImage: UIImage? {
         get {
             return foregroundImageView?.image
         }
@@ -117,12 +117,12 @@ class MHRotaryKnob: UIControl {
     }
     // The image currently being used to draw the knob.
 
-    var currentKnobImage: UIImage? {
+    public var currentKnobImage: UIImage? {
         return knobImageView?.image
     }
     // For positioning the knob image.
 
-    var knobImageCenter: CGPoint {
+    public var knobImageCenter: CGPoint {
         get {
             return knobImageView?.center ?? CGPoint.zero
         }
@@ -131,13 +131,13 @@ class MHRotaryKnob: UIControl {
         }
     }
     // The maximum value of the control. Default is 1.0.
-    var maximumValue: CGFloat = 0.0
+    public var maximumValue: CGFloat = 0.0
     // The minimum value of the control. Default is 0.0.
-    var minimumValue: CGFloat = 0.0
+    public var minimumValue: CGFloat = 0.0
     // The control's current value. Default is 0.5 (center position).
 
     private var _value: CGFloat = 0.0
-    var value: CGFloat {
+    public var value: CGFloat {
         get {
             _value
         }
@@ -146,28 +146,28 @@ class MHRotaryKnob: UIControl {
         }
     }
     // The control's default value. Default is 0.5 (center position).
-    var defaultValue: CGFloat = 0.0
+    public var defaultValue: CGFloat = 0.0
     /*
      * Whether the control resets to the default value on a double tap.
      * Default is YES.
      */
-    var resetsToDefault = false
+    public var resetsToDefault = false
     /*
      * Whether changes in the knob's value generate continuous update events.
      * If NO, the control only sends an action event when the user releases the
      * knob. The default is YES.
      */
-    var continuous = false
+    public var continuous = false
     /*
      * How many points of movement result in a one degree rotation in the knob's
      * position. Only used in the horizontal/vertical slider modes. Default is 1.
      */
-    var scalingFactor: CGFloat = 0.0
+    public var scalingFactor: CGFloat = 0.0
     /*
      * Get current knob angle.
      */
 
-    var angle: CGFloat {
+    public var angle: CGFloat {
         get {
             self.angle(forValue: value)
         }
@@ -178,17 +178,17 @@ class MHRotaryKnob: UIControl {
     /*
      * How far the knob can rotate to either side. Default is 135.0 degrees.
      */
-    var maxAngle: CGFloat = 0.0
+    public var maxAngle: CGFloat = 0.0
     /*
      * How far away touches must be from the center of the knob in order to be
      * recognized. Default is 4 points.
      */
-    var minRequiredDistanceFromKnobCenter: CGFloat = 0.0
+    public var minRequiredDistanceFromKnobCenter: CGFloat = 0.0
     /*
      * Whether the accepted touch area is contained within the bounding circle of the view.
      * The default is NO to be compatible with previous versions.
      */
-    var circularTouchZone = false
+    public var circularTouchZone = false
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -310,7 +310,7 @@ class MHRotaryKnob: UIControl {
         valueDidChange(from: oldValue, to: value, animated: animated)
     }
 
-    override var isEnabled: Bool {
+    public override var isEnabled: Bool {
         didSet {
             if !self.isEnabled {
                 showDisabledKnobImage()
@@ -324,7 +324,7 @@ class MHRotaryKnob: UIControl {
 
     // MARK: - Touch Handling
 
-    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+    public override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         let point = touch.location(in: self)
 
         if interactionStyle == .rotating {
@@ -383,7 +383,7 @@ class MHRotaryKnob: UIControl {
         return true
     }
 
-    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+    public override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         if handle(touch) && continuous {
             sendActions(for: .valueChanged)
         }
@@ -391,7 +391,7 @@ class MHRotaryKnob: UIControl {
         return true
     }
 
-    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+    public override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         isHighlighted = false
         showNormalKnobImage()
 
@@ -403,7 +403,7 @@ class MHRotaryKnob: UIControl {
         sendActions(for: .valueChanged)
     }
 
-    override func cancelTracking(with event: UIEvent?) {
+    public override func cancelTracking(with event: UIEvent?) {
         isHighlighted = false
         showNormalKnobImage()
     }
@@ -452,7 +452,7 @@ class MHRotaryKnob: UIControl {
      * rotated when the control's value changes, so it's best to make it perfectly
      * round.
      */
-    func setKnobImage(_ image: UIImage?, for theState: UIControl.State) {
+    public func setKnobImage(_ image: UIImage?, for theState: UIControl.State) {
         if theState == .normal {
             if image != knobImageNormal {
                 knobImageNormal = image
@@ -488,7 +488,7 @@ class MHRotaryKnob: UIControl {
     /*
      * Returns the thumb image associated with the specified control state.
      */
-    func knobImage(for theState: UIControl.State) -> UIImage? {
+    public func knobImage(for theState: UIControl.State) -> UIImage? {
         if theState == .normal {
             return knobImageNormal
         } else if theState.rawValue & UIControl.State.highlighted.rawValue != 0 {
