@@ -10,9 +10,10 @@ import SwiftUI
 
 struct MHRotaryKnobRepresentable: UIViewRepresentable {
     @ObservedObject var config: MHRotaryKnobConfiguration
+    let size: CGSize
 
     func makeUIView(context: Context) -> MHRotaryKnob {
-        let rotaryKnob = MHRotaryKnob(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        let rotaryKnob = MHRotaryKnob(frame: CGRect(origin: .zero, size: self.size))
 
         updateProperties(rotaryKnob: rotaryKnob)
         return rotaryKnob
@@ -46,13 +47,15 @@ struct MHRotaryKnobRepresentable: UIViewRepresentable {
 
 public struct MHRotaryKnobView: View {
     @ObservedObject var configuration: MHRotaryKnobConfiguration
+    let size: CGSize
 
-    public init(_ configuration: MHRotaryKnobConfiguration) {
+    public init(_ configuration: MHRotaryKnobConfiguration, size: CGSize = CGSize(width: 250, height: 250)) {
         self.configuration = configuration
+        self.size = size
     }
 
     public var body: some View {
-        MHRotaryKnobRepresentable(config: configuration)
+        MHRotaryKnobRepresentable(config: configuration, size: self.size)
     }
 }
 
