@@ -66,7 +66,7 @@ public enum MHRotaryKnobInteractionStyle {
 public class MHRotaryKnob: UIControl {
     private var backgroundImageView: UIImageView? // shows the background image
     private var foregroundImageView: UIImageView? // shows the foreground image
-    private var knobImageView: UIImageView? // shows the knob image
+    private var knobImageView: UIImageView! // shows the knob image
     private var knobImageNormal: UIImage? // knob image for normal state
     private var knobImageHighlighted: UIImage? // knob image for highlighted state
     private var knobImageDisabled: UIImage? // knob image for disabled state
@@ -75,7 +75,7 @@ public class MHRotaryKnob: UIControl {
     private var canReset = false // prevents reset while still dragging
 
     /// How the user interacts with the control.
-    public var interactionStyle: MHRotaryKnobInteractionStyle!
+    public var interactionStyle: MHRotaryKnobInteractionStyle = .rotating
 
     /// The image that is drawn behind the knob. May be nil.
     public var backgroundImage: UIImage? {
@@ -210,7 +210,6 @@ public class MHRotaryKnob: UIControl {
     }
 
     func commonInit() {
-        interactionStyle = .rotating
         minimumValue = 0.0
         maximumValue = 1.0
         defaultValue = 0.5
@@ -359,20 +358,25 @@ public class MHRotaryKnob: UIControl {
 
     @discardableResult
     func handle(_ touch: UITouch?) -> Bool {
-        if (touch?.tapCount ?? 0) > 1 && resetsToDefault && canReset {
+        guard let touch else {
+            value = value(forPosition: .zero)
+            return true
+        }
+
+        if touch.tapCount > 1 && resetsToDefault && canReset {
             setValue(Float(defaultValue), animated: true)
             return false
         }
 
-        let point = touch?.location(in: self)
+        let point = touch.location(in: self)
 
         if interactionStyle == .rotating {
-            if shouldIgnoreTouch(at: point ?? CGPoint.zero) {
+            if shouldIgnoreTouch(at: point) {
                 return false
             }
 
             // Calculate how much the angle has changed since the last event.
-            let newAngle = angleBetweenCenterAndPoint(point ?? CGPoint.zero)
+            let newAngle = angleBetweenCenterAndPoint(point)
             let delta = newAngle - angle
             angle = newAngle
 
@@ -387,7 +391,7 @@ public class MHRotaryKnob: UIControl {
             // Note that the above is equivalent to:
             //self.value += [self valueForAngle:newAngle] - [self valueForAngle:angle];
         } else {
-            value = value(forPosition: point ?? CGPoint.zero)
+            value = value(forPosition: point)
         }
 
         return true
@@ -425,6 +429,10 @@ public class MHRotaryKnob: UIControl {
 
         let newAngle = angle(forValue: newValue)
 
+        guard let knobImageView else {
+            return
+        }
+
         if animated {
             // We cannot simply use UIView's animations because they will take the
             // shortest path, but we always want to go the long way around. So we
@@ -449,10 +457,10 @@ public class MHRotaryKnob: UIControl {
                 CAMediaTimingFunction(name: .easeOut)
             ]
 
-            knobImageView?.layer.add(animation, forKey: nil)
+            knobImageView.layer.add(animation, forKey: nil)
         }
 
-        knobImageView?.transform = CGAffineTransform(rotationAngle: newAngle * .pi / 180.0)
+        knobImageView.transform = CGAffineTransform(rotationAngle: newAngle * .pi / 180.0)
     }
 
     /**
@@ -468,8 +476,8 @@ public class MHRotaryKnob: UIControl {
                 knobImageNormal = image
 
                 if state == .normal {
-                    knobImageView?.image = image
-                    knobImageView?.sizeToFit()
+                    knobImageView.image = image
+                    knobImageView.sizeToFit()
                 }
             }
         }
