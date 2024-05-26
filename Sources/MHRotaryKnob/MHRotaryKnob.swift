@@ -66,7 +66,42 @@ public enum MHRotaryKnobInteractionStyle {
 public class MHRotaryKnob: UIControl {
     private var backgroundImageView: UIImageView? // shows the background image
     private var foregroundImageView: UIImageView? // shows the foreground image
+    
+    // Need to handle in this way so that UIImageView has the correct bounds.
+    private var _knobImageView: UIImageView?
     private var knobImageView: UIImageView! // shows the knob image
+    {
+        get {
+            return updateKnobImageViewIfNecessary()
+        }
+    }
+
+    @discardableResult
+    func updateKnobImageViewIfNecessary() -> UIImageView {
+        var image: UIImage?
+        if let _knobImageView {
+            if _knobImageView.bounds == self.bounds {
+                return _knobImageView
+            }
+            image = _knobImageView.image
+            _knobImageView.removeFromSuperview()
+        }
+        let imageView = UIImageView(frame: self.bounds)
+        imageView.image = image
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(imageView)
+//        imageView.sizeToFit()
+        self.addConstraints([
+            .init(item: self, attribute: .top, relatedBy: .equal, toItem: imageView, attribute: .top, multiplier: 1.0, constant: 0.0),
+            .init(item: self, attribute: .left, relatedBy: .equal, toItem: imageView, attribute: .left, multiplier: 1.0, constant: 0.0),
+            .init(item: self, attribute: .right, relatedBy: .equal, toItem: imageView, attribute: .right, multiplier: 1.0, constant: 0.0),
+            .init(item: self, attribute: .bottom, relatedBy: .equal, toItem: imageView, attribute: .bottom, multiplier: 1.0, constant: 0.0),
+        ])
+
+        _knobImageView = imageView
+        return imageView
+    }
+
     private var knobImageNormal: UIImage? // knob image for normal state
     private var knobImageHighlighted: UIImage? // knob image for highlighted state
     private var knobImageDisabled: UIImage? // knob image for disabled state
@@ -76,6 +111,30 @@ public class MHRotaryKnob: UIControl {
 
     /// How the user interacts with the control.
     public var interactionStyle: MHRotaryKnobInteractionStyle = .rotating
+
+    #if false
+    private var touchPoint: CGPoint? {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
+    public override func draw(_ rect: CGRect) {
+        super.draw(rect)
+
+        let cg = UIGraphicsGetCurrentContext()!
+        if let touchPoint {
+            let radius: CGFloat = 10
+            let r = CGRect(x: touchPoint.x - radius, y: touchPoint.y - radius, width: radius*2, height: radius*2)
+            cg.setLineWidth(4)
+            cg.setStrokeColor(CGColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0))
+            cg.strokeEllipse(in: r)
+        }
+
+        cg.setLineWidth(2.0)
+        cg.setStrokeColor(CGColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.5))
+        cg.stroke(self.bounds)
+    }
+    #endif
 
     /// The image that is drawn behind the knob. May be nil.
     public var backgroundImage: UIImage? {
@@ -221,11 +280,6 @@ public class MHRotaryKnob: UIControl {
         maxAngle = 135.0
         minRequiredDistanceFromKnobCenter = 4.0
 
-        knobImageView = UIImageView(frame: bounds)
-        if let knobImageView {
-            addSubview(knobImageView)
-        }
-
         valueDidChange(from: value, to: value, animated: false)
     }
 
@@ -359,6 +413,7 @@ public class MHRotaryKnob: UIControl {
     @discardableResult
     func handle(_ touch: UITouch?) -> Bool {
         guard let touch else {
+//            self.touchPoint = nil
             value = value(forPosition: .zero)
             return true
         }
@@ -369,6 +424,7 @@ public class MHRotaryKnob: UIControl {
         }
 
         let point = touch.location(in: self)
+//        self.touchPoint = point
 
         if interactionStyle == .rotating {
             if shouldIgnoreTouch(at: point) {
@@ -386,12 +442,14 @@ public class MHRotaryKnob: UIControl {
                 return false
             }
 
-            value += (maximumValue - minimumValue) * delta / (maxAngle * 2.0)
+            let newValue = value + (maximumValue - minimumValue) * delta / (maxAngle * 2.0)
+            self.setValue(Float(newValue), animated: true)
 
             // Note that the above is equivalent to:
             //self.value += [self valueForAngle:newAngle] - [self valueForAngle:angle];
         } else {
-            value = value(forPosition: point)
+            let newValue = value(forPosition: point)
+            value = newValue
         }
 
         return true
@@ -425,6 +483,7 @@ public class MHRotaryKnob: UIControl {
     // MARK: - Visuals
 
     func valueDidChange(from oldValue: CGFloat, to newValue: CGFloat, animated: Bool) {
+
         // (If you want to do custom drawing, then this is the place to do so.)
 
         let newAngle = angle(forValue: newValue)
@@ -471,6 +530,8 @@ public class MHRotaryKnob: UIControl {
      * round.
      */
     public func setKnobImage(_ image: UIImage?, for theState: UIControl.State) {
+        updateKnobImageViewIfNecessary()
+
         if theState == .normal {
             if image != knobImageNormal {
                 knobImageNormal = image
