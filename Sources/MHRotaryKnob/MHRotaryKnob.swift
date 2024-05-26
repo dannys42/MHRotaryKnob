@@ -252,6 +252,7 @@ public class MHRotaryKnob: UIControl {
         maxAngle = 135.0
         minRequiredDistanceFromKnobCenter = 4.0
         self.translatesAutoresizingMaskIntoConstraints = true
+        self.sizeToFit()
 
         valueDidChange(from: value, to: value, animated: false)
     }
@@ -580,6 +581,7 @@ public class MHRotaryKnob: UIControl {
     } 
 
     private func constrainToBounds(view: UIView) {
+        view.translatesAutoresizingMaskIntoConstraints = false
         self.addConstraints([
             .init(item: self, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: 0.0),
             .init(item: self, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1.0, constant: 0.0),
@@ -592,7 +594,6 @@ public class MHRotaryKnob: UIControl {
         let imageView = UIImageView(frame: self.bounds)
         imageView.image = image
         addSubview(imageView)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         constrainToBounds(view: imageView)
         return imageView
     }
