@@ -68,39 +68,7 @@ public class MHRotaryKnob: UIControl {
     private var foregroundImageView: UIImageView? // shows the foreground image
     
     // Need to handle in this way so that UIImageView has the correct bounds.
-    private var _knobImageView: UIImageView?
-    private var knobImageView: UIImageView! // shows the knob image
-    {
-        get {
-            return updateKnobImageViewIfNecessary()
-        }
-    }
-
-    @discardableResult
-    func updateKnobImageViewIfNecessary() -> UIImageView {
-        var image: UIImage?
-        if let _knobImageView {
-            if _knobImageView.bounds == self.bounds {
-                return _knobImageView
-            }
-            image = _knobImageView.image
-            _knobImageView.removeFromSuperview()
-        }
-        let imageView = UIImageView(frame: self.bounds)
-        imageView.image = image
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(imageView)
-//        imageView.sizeToFit()
-        self.addConstraints([
-            .init(item: self, attribute: .top, relatedBy: .equal, toItem: imageView, attribute: .top, multiplier: 1.0, constant: 0.0),
-            .init(item: self, attribute: .left, relatedBy: .equal, toItem: imageView, attribute: .left, multiplier: 1.0, constant: 0.0),
-            .init(item: self, attribute: .right, relatedBy: .equal, toItem: imageView, attribute: .right, multiplier: 1.0, constant: 0.0),
-            .init(item: self, attribute: .bottom, relatedBy: .equal, toItem: imageView, attribute: .bottom, multiplier: 1.0, constant: 0.0),
-        ])
-
-        _knobImageView = imageView
-        return imageView
-    }
+    private var knobImageView: UIImageView? // shows the knob image
 
     private var knobImageNormal: UIImage? // knob image for normal state
     private var knobImageHighlighted: UIImage? // knob image for highlighted state
@@ -142,15 +110,17 @@ public class MHRotaryKnob: UIControl {
             return backgroundImageView?.image
         }
         set(image) {
-            if backgroundImageView == nil {
-                backgroundImageView = UIImageView(frame: bounds)
-                if let backgroundImageView {
-                    addSubview(backgroundImageView)
-                    sendSubviewToBack(backgroundImageView)
-                }
+            guard let image else {
+                self.backgroundImageView?.removeFromSuperview()
+                return
             }
-
-            backgroundImageView?.image = image
+            if let backgroundImageView {
+                backgroundImageView.image = image
+            } else {
+                let imageView = self.createUIImageView(image: image)
+                sendSubviewToBack(imageView)
+                self.backgroundImageView = imageView
+            }
         }
     }
 
@@ -163,15 +133,17 @@ public class MHRotaryKnob: UIControl {
             return foregroundImageView?.image
         }
         set(image) {
-            if foregroundImageView == nil {
-                foregroundImageView = UIImageView(frame: bounds)
-                if let foregroundImageView {
-                    addSubview(foregroundImageView)
-                    bringSubviewToFront(foregroundImageView)
-                }
+            guard let image else {
+                self.foregroundImageView?.removeFromSuperview()
+                return
             }
-
-            foregroundImageView?.image = image
+            if let foregroundImageView {
+                foregroundImageView.image = image
+            } else {
+                let imageView = self.createUIImageView(image: image)
+                bringSubviewToFront(imageView)
+                self.foregroundImageView = imageView
+            }
         }
     }
 
@@ -279,6 +251,7 @@ public class MHRotaryKnob: UIControl {
         scalingFactor = 1.0
         maxAngle = 135.0
         minRequiredDistanceFromKnobCenter = 4.0
+        self.translatesAutoresizingMaskIntoConstraints = true
 
         valueDidChange(from: value, to: value, animated: false)
     }
@@ -530,7 +503,14 @@ public class MHRotaryKnob: UIControl {
      * round.
      */
     public func setKnobImage(_ image: UIImage?, for theState: UIControl.State) {
-        updateKnobImageViewIfNecessary()
+        let knobImageView: UIImageView
+        if let existingKnobImageView = self.knobImageView {
+            knobImageView = existingKnobImageView
+        } else {
+            knobImageView = self.createUIImageView(image: image)
+            bringSubviewToFront(knobImageView)
+            self.knobImageView = knobImageView
+        }
 
         if theState == .normal {
             if image != knobImageNormal {
@@ -548,7 +528,7 @@ public class MHRotaryKnob: UIControl {
                 knobImageHighlighted = image
 
                 if state.rawValue & UIControl.State.highlighted.rawValue != 0 {
-                    knobImageView?.image = image
+                    knobImageView.image = image
                 }
             }
         }
@@ -558,7 +538,7 @@ public class MHRotaryKnob: UIControl {
                 knobImageDisabled = image
 
                 if state.rawValue & UIControl.State.disabled.rawValue != 0 {
-                    knobImageView?.image = image
+                    knobImageView.image = image
                 }
             }
         }
@@ -597,6 +577,24 @@ public class MHRotaryKnob: UIControl {
         } else {
             knobImageView?.image = knobImageNormal
         }
+    } 
+
+    private func constrainToBounds(view: UIView) {
+        self.addConstraints([
+            .init(item: self, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: 0.0),
+            .init(item: self, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1.0, constant: 0.0),
+            .init(item: self, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1.0, constant: 0.0),
+            .init(item: self, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: 0.0),
+        ])
+    }
+
+    private func createUIImageView(image: UIImage?) -> UIImageView {
+        let imageView = UIImageView(frame: self.bounds)
+        imageView.image = image
+        addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        constrainToBounds(view: imageView)
+        return imageView
     }
 }
 
