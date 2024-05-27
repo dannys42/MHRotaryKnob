@@ -6,6 +6,8 @@
  *
  * With contributions from Tim Kemp (slider-style tracking).
  *
+ * Contributions from Danny Sung <danny@dannysung.com> (Bugfixes and Swift conversion)
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -369,7 +371,7 @@ public class MHRotaryKnob: UIControl {
             _value = CGFloat(newValue)
         }
 
-        valueDidChange(from: oldValue, to: value, animated: animated)
+        valueDidChange(from: oldValue, to: _value, animated: animated)
     }
 
     public override var isEnabled: Bool {
@@ -434,7 +436,6 @@ public class MHRotaryKnob: UIControl {
             // Calculate how much the angle has changed since the last event.
             let newAngle = angleBetweenCenterAndPoint(point)
             let delta = newAngle - angle
-            angle = newAngle
 
             // We don't want the knob to jump from minimum to maximum or vice versa
             // so disallow huge changes.
@@ -448,7 +449,7 @@ public class MHRotaryKnob: UIControl {
             // Note that the above is equivalent to:
             //self.value += [self valueForAngle:newAngle] - [self valueForAngle:angle];
         } else {
-            let newValue = value(forPosition: point)
+           let newValue = value(forPosition: point)
             value = newValue
         }
 
@@ -485,12 +486,11 @@ public class MHRotaryKnob: UIControl {
     func valueDidChange(from oldValue: CGFloat, to newValue: CGFloat, animated: Bool) {
 
         // (If you want to do custom drawing, then this is the place to do so.)
-
-        let newAngle = angle(forValue: newValue)
-
         guard let knobImageView else {
             return
         }
+
+        let newAngle = angle(forValue: newValue)
 
         if animated {
             // We cannot simply use UIView's animations because they will take the
