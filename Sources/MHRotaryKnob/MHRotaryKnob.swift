@@ -581,9 +581,6 @@ public class MHRotaryKnob: UIControl {
     } 
 
     private func constrainToBounds(view: UIView) {
-        view.translatesAutoresizingMaskIntoConstraints = true
-
-        /*
         view.translatesAutoresizingMaskIntoConstraints = false
         self.addConstraints([
             .init(item: self, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: 0.0),
@@ -591,7 +588,6 @@ public class MHRotaryKnob: UIControl {
             .init(item: self, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1.0, constant: 0.0),
             .init(item: self, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: 0.0),
         ])
-         */
     }
 
     private func createUIImageView(image: UIImage?) -> UIImageView {
